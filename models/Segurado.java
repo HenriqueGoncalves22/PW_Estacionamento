@@ -3,16 +3,17 @@ package models;
 public class Segurado extends Veiculo implements ISeguroService{
     private double seguro;
 
-
-    public Segurado(double seguro, valorHora, valorAdicional, horas){
+    public Segurado(double seguro, double valorHora, double valorAdicional, double horas){
+        super(valorHora, valorAdicional, horas);
         this.seguro = seguro;
     }
     @Override
     public double doTotal(){
         return super.doTotal()-doDesconto();
     }
+
     public String doViewCupom(){
-        return "Cupom: ";
+        return "seguro: "+ seguro + "\n" + "Cupom:" + doDesconto() + "\n" + super.doViewCupom();
     }
 
     @Override
@@ -28,33 +29,4 @@ public class Segurado extends Veiculo implements ISeguroService{
         this.seguro = seguro;
     }
 
-    @Override
-    public double getValorHora() {
-        return super.getValorHora();
-    }
-
-    @Override
-    public void setValorHora(double valorHora) {
-        super.setValorHora(valorHora);
-    }
-
-    @Override
-    public double getValorAdicional() {
-        return super.getValorAdicional();
-    }
-
-    @Override
-    public void setValorAdicional(double valorAdicional) {
-        super.setValorAdicional(valorAdicional);
-    }
-
-    @Override
-    public double getHoras() {
-        return super.getHoras();
-    }
-
-    @Override
-    public void setHoras(double horas) {
-        super.setHoras(horas);
-    }
 }

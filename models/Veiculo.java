@@ -5,11 +5,18 @@ public abstract class Veiculo {
     private double valorAdicional;
     private double horas;
 
+    public Veiculo(double valorHora, double valorAdicional, double horas) {
+        this.horas = horas;
+        this.valorAdicional = valorAdicional;
+        this.valorHora = valorHora;
+    }
+
     public double doTotal(){
         return valorHora + valorAdicional * (horas-1);
     }
+
     public String doViewCupom(){
-        return "Cupom: ";
+        return "valor por hora: " + valorHora + "\n" + "valor adicional: " + valorAdicional + "\n" +"horas: " + horas  + "\n" + "Total: " + doTotal();
     }
 
     public double getValorHora() {

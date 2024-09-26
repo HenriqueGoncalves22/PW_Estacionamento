@@ -8,7 +8,7 @@ public class BalancoDiario {
         qtdeCarros = BalancoDiario.qtdeCarros+1;
     }
     public String doGerarRelatorio(){
-        return "";
+        return "\n" + "Quantidade de Carros: " + qtdeCarros + "\n" + "total: " + total;
     }
 
 

@@ -1,7 +1,5 @@
 package models;
 
 public interface ISeguroService {
-     public double doDesconto(){
-
-     }
+      double doDesconto();
 }
